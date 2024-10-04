@@ -3,4 +3,8 @@ project(intro)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(intro main.cpp)
+add_executable(
+        intro main.cpp
+        src/GameEngine.h
+        src/GameEngine.cpp
+)
