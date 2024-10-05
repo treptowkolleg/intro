@@ -7,19 +7,22 @@
 #include <string>
 #include <vector>
 
+#include "character/Character.h"
+
+
 using namespace std;
 
 // Interface
 class GameEngine
 {
-    vector<string> players;
+    vector<Character> players;
 
 public:
-    [[nodiscard]] vector<string> getPlayers();
-    [[nodiscard]] string getPlayer(int index);
-    void setPlayer(int index, string player);
-
-    GameEngine *addPlayer(const string &player);
+    GameEngine(const string& title, const string& key);
+    [[nodiscard]] vector<Character> getPlayers();
+    [[nodiscard]] Character getPlayer(int index);
+    void setPlayer(int index, const Character& player);
+    GameEngine *addPlayer(const Character &player);
 };
 
 #endif //GAMEENGINE_H

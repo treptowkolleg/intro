@@ -6,24 +6,29 @@
 
 #include <utility>
 
+#include "character/Character.h"
+
 using namespace std;
 
 // Implementierte Attribute und Methoden
 
-vector<string> GameEngine::getPlayers() {
+GameEngine::GameEngine(const string& title, const string& key) {
+}
+
+vector<Character> GameEngine::getPlayers() {
     return this->players;
 }
 
-string GameEngine::getPlayer(const int index) {
+Character GameEngine::getPlayer(const int index) {
     return this->players[index];
 }
 
-void GameEngine::setPlayer(const int index, string player) {
-    this->players[index] = move(player);
+void GameEngine::setPlayer(const int index, const Character& player) {
+    this->players[index] = player;
 }
 
 
-GameEngine *GameEngine::addPlayer(const string &player) {
+auto GameEngine::addPlayer(const Character &player) -> GameEngine * {
     this->players.push_back(player);
     return this;
 }
